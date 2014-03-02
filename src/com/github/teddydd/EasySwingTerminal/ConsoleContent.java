@@ -91,8 +91,8 @@ public class ConsoleContent implements IConsoleContent {
 	}
 	
 	/**Returns the index of cell with given coordinates. For testing.
-	 * @param column int from 1 to width
-	 * @param row 1 to height
+	 * @param column from 1 to width
+	 * @param row form 1 to height
 	 * @return index useful for extracting one element of the array
 	 */
 	public int getCellIndex(int column, int row) {
