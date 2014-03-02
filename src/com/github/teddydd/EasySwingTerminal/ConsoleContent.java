@@ -16,7 +16,22 @@ public class ConsoleContent implements IConsoleContent {
 
 	public ConsoleContent(int rows, int columns, Color defaultTextColor,
 			Color defaultBackgroundColor) {
+		
 		this.width = columns;
+		
+		//creating arrays
+		int size = rows * columns;
+		letters = new char[size];
+		textColor = new Color[size];
+		BackgroundColor = new Color[size];
+		
+		//filling with default values
+		
+		for (int i = 0; i < size - 1; i++) {
+			letters[i] = ' ';
+			textColor[i] = defaultTextColor;
+			BackgroundColor[i] = defaultBackgroundColor;
+		}
 		
 	}
 	
@@ -24,40 +39,55 @@ public class ConsoleContent implements IConsoleContent {
 		this(rows, columns, Color.black, Color.white);
 	}
 
+	//getters & setters
+	
 	@Override
 	public void setChar(int x, int y, char c) {
-		// TODO Auto-generated method stub
-
+		letters[getCellIndex(x, y)] = c;
 	}
 
 	@Override
 	public char getChar(int x, int y) {
-		// TODO Auto-generated method stub
-		return 0;
+		return letters[getCellIndex(x, y)];
 	}
 
 	@Override
 	public void setTextColor(int x, int y, Color color) {
-		// TODO Auto-generated method stub
-
+		textColor[getCellIndex(x, y)] = color;
 	}
 
 	@Override
 	public Color getTextColor(int x, int y) {
-		// TODO Auto-generated method stub
-		return null;
+		return textColor[getCellIndex(x, y)];
 	}
 
 	@Override
 	public void setBackgrounColor(int x, int y, Color color) {
-		// TODO Auto-generated method stub
-
+		BackgroundColor[getCellIndex(x, y)] = color;
 	}
 
 	@Override
 	public Color getBackgrounColor(int x, int y) {
-		// TODO Auto-generated method stub
-		return null;
+		return BackgroundColor[getCellIndex(x, y)];
+	}
+	
+	/**returns the whole array of letters instead of a single element
+	 * @return 1D array of chars
+	 */
+	public char[] getLettersArray() {
+		return this.letters;
+	}
+	/**returns the whole array of foreground colors instead of a single element
+	 * @return 1D array of colors
+	 */
+	public Color[] getTextColorsArray() {
+		return this.textColor;
+	}
+	/**returns the whole array of foreground colors instead of a single element
+	 * @return 1D array of colors
+	 */
+	public Color[] getBackgroundColorsArray() {
+		return this.BackgroundColor;
 	}
 	
 	/**Returns the index of cell with given coordinates. For testing.
