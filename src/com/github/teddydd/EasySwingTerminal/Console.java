@@ -30,7 +30,7 @@ public class Console extends JComponent{
 	private Color defaultTextColor;
 	private Color defaultBackgroundColor;
 	
-	private ConsoleContent buffer;
+	public ConsoleContent buffer;
 	
 	/**Constructor calculating console size based on the font size.
 	 * @param columns number of columns - a minimum of 1
@@ -43,6 +43,8 @@ public class Console extends JComponent{
 		this.columns = columns;
 		this.rows = rows;
 		this.font = font;
+		
+		buffer = new ConsoleContent(rows, columns, defalutTextColor, defalutBackgroundColor);
 		
 		this.defaultTextColor = defalutTextColor;
 		this.defaultBackgroundColor = defalutBackgroundColor;
@@ -74,7 +76,7 @@ public class Console extends JComponent{
 				//drawing letters background
 				Color bg = buffer.getBackgrounColor(column, row);
 				g2d.setColor(bg);
-				g2d.fillRect(column * cellSize.width, row * cellSize.height, cellSize.width, cellSize.height);
+				g2d.fillRect((column-1) * cellSize.width, (row-1) * cellSize.height, cellSize.width, cellSize.height);
 			}
 		}
 	}
