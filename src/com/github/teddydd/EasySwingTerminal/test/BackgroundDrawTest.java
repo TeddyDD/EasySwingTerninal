@@ -20,7 +20,7 @@ public class BackgroundDrawTest extends JFrame{
 		
 		font = DefaultConsoleSettings.font;
 		
-		console = new Console(50, 19, font, Color.white, Color.black);
+		console = new Console(10, 5, font, Color.white, Color.black);
 		
 		getContentPane().add(console);
 
@@ -33,11 +33,13 @@ public class BackgroundDrawTest extends JFrame{
 		
 		test.setVisible(true);
 		
-//		for (int y = 1; y < 19; y++) {
-//			for(int x = 1; y < 50; x++){
-//				test.console.buffer.setBackgrounColor(x, y, Utils.getRandomColor());
-//			}
-//		}
+		for (int y = 1; y < 6; y++) {
+			for(int x = 1; x < 11; x++){
+				test.console.buffer.setBackgrounColor(x, y, Utils.getRandomColor());
+			}
+		}
+		
+		test.console.buffer.setBackgrounColor(10, 5, Color.orange);
 		
 		test.console.repaint();
 

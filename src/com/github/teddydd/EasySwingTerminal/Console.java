@@ -71,10 +71,11 @@ public class Console extends JComponent{
 		g2d.setColor(defaultBackgroundColor);
 		g2d.fillRect(0, 0, size.width, size.height);
 		
-		for (int row = 1; row < rows; row++){
-			for (int column = 1; column < rows; column++) {
+		for (int row = 1; row <= rows; row++){
+			for (int column = 1; column <= columns; column++) {
 				//drawing letters background
 				Color bg = buffer.getBackgrounColor(column, row);
+				System.out.println("geting color from " + column + " " + row);
 				g2d.setColor(bg);
 				g2d.fillRect((column-1) * cellSize.width, (row-1) * cellSize.height, cellSize.width, cellSize.height);
 			}

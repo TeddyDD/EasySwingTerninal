@@ -14,6 +14,12 @@ public class ConsoleContent implements IConsoleContent {
 
 	private int width;
 
+	/**
+	 * @param rows number of rows
+	 * @param columns number of columns
+	 * @param defaultTextColor 
+	 * @param defaultBackgroundColor
+	 */
 	public ConsoleContent(int rows, int columns, Color defaultTextColor,
 			Color defaultBackgroundColor) {
 		
