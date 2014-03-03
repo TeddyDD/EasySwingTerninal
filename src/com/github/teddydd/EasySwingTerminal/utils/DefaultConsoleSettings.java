@@ -7,7 +7,7 @@ import java.awt.Font;
 /** Some basic values for easy testing */
 public class DefaultConsoleSettings {
 	
-	public static Font font = new Font("Courier New", Font.PLAIN, 24);
+	public static Font font = new Font("Consolas", Font.PLAIN, 24);
 	
 	public static Color fgColor = Color.white;
 	public static Color bgColor = Color.black;

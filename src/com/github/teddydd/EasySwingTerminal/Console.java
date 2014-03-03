@@ -59,6 +59,8 @@ public class Console extends JComponent{
 		setPreferredSize(size);
 		
 		setBackground(Color.black);
+		
+		setFont(this.font);
 	}
 	
 	@Override
@@ -78,6 +80,16 @@ public class Console extends JComponent{
 				System.out.println("geting color from " + column + " " + row);
 				g2d.setColor(bg);
 				g2d.fillRect((column-1) * cellSize.width, (row-1) * cellSize.height, cellSize.width, cellSize.height);
+				
+				//drawing text
+				Color fg = buffer.getTextColor(column, row);
+				g2d.setColor(fg);
+				System.out.println("Printing at " + column + " " + row);
+				g2d.drawChars(buffer.getLettersArray(),
+						buffer.getCellIndex(column, row),
+						1,
+						(column-1) * cellSize.width,
+						(row) * cellSize.height - fontMetrics.getDescent());
 			}
 		}
 	}
