@@ -36,7 +36,7 @@ public class BackgroundDrawTest extends JFrame{
 		for (int y = 1; y < 6; y++) {
 			for(int x = 1; x < 11; x++){
 				test.console.buffer.setBackgrounColor(x, y, Utils.getRandomColor());
-				test.console.buffer.setTextColor(x, y, Color.black);
+//				test.console.buffer.setTextColor(x, y, Color.black);
 				test.console.buffer.setChar(x, y, 'A');
 			}
 		}

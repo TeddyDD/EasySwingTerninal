@@ -33,7 +33,7 @@ public class ConsoleContent implements IConsoleContent {
 		
 		//filling with default values
 		
-		for (int i = 0; i < size - 1; i++) {
+		for (int i = 0; i < letters.length; i++) {
 			letters[i] = ' ';
 			textColor[i] = defaultTextColor;
 			BackgroundColor[i] = defaultBackgroundColor;

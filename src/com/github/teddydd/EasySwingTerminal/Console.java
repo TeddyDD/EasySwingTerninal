@@ -46,10 +46,10 @@ public class Console extends JComponent{
 		this.rows = rows;
 		this.font = font;
 		
-		buffer = new ConsoleContent(rows, columns, defalutTextColor, defalutBackgroundColor);
-		
 		this.defaultTextColor = defalutTextColor;
 		this.defaultBackgroundColor = defalutBackgroundColor;
+		
+		buffer = new ConsoleContent(rows, columns, defalutTextColor, defalutBackgroundColor);
 		
 		fontMetrics = Utils.getConsoleFontMetrics(font);
 		cellSize = new Dimension(fontMetrics.charWidth('W'), fontMetrics.getHeight());
