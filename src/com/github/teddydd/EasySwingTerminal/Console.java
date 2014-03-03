@@ -30,6 +30,8 @@ public class Console extends JComponent{
 	private Color defaultTextColor;
 	private Color defaultBackgroundColor;
 	
+	/**ConsoleContent class object that 
+	 * stores all the contents of the console (characters, colors) */
 	public ConsoleContent buffer;
 	
 	/**Constructor calculating console size based on the font size.
@@ -77,14 +79,12 @@ public class Console extends JComponent{
 			for (int column = 1; column <= columns; column++) {
 				//drawing letters background
 				Color bg = buffer.getBackgrounColor(column, row);
-				System.out.println("geting color from " + column + " " + row);
 				g2d.setColor(bg);
 				g2d.fillRect((column-1) * cellSize.width, (row-1) * cellSize.height, cellSize.width, cellSize.height);
 				
 				//drawing text
 				Color fg = buffer.getTextColor(column, row);
 				g2d.setColor(fg);
-				System.out.println("Printing at " + column + " " + row);
 				g2d.drawChars(buffer.getLettersArray(),
 						buffer.getCellIndex(column, row),
 						1,
@@ -92,6 +92,13 @@ public class Console extends JComponent{
 						(row) * cellSize.height - fontMetrics.getDescent());
 			}
 		}
+	}
+	
+	public int getColumns() {
+		return this.columns;
+	}
+	public int getRows() {
+		return this.rows;
 	}
 	
 }
