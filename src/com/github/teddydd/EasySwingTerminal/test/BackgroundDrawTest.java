@@ -20,7 +20,7 @@ public class BackgroundDrawTest extends JFrame{
 		
 		font = DefaultConsoleSettings.font;
 		
-		console = new Console(10, 5, font, Color.white, Color.black);
+		console = new Console(10, 5, font, Color.black, Color.blue);
 		
 		getContentPane().add(console);
 
