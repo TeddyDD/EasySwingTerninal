@@ -101,6 +101,7 @@ public class ConsoleContent implements IConsoleContent {
 	 * @param row form 1 to height
 	 * @return index useful for extracting one element of the array
 	 */
+	@Override
 	public int getCellIndex(int column, int row) {
 		return ((row - 1) * width) + (column - 1);
 	}

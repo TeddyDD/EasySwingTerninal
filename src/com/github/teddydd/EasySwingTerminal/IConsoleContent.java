@@ -16,5 +16,10 @@ public interface IConsoleContent {
 	
 	void setBackgrounColor(int x, int y, Color color);
 	Color getBackgrounColor(int x, int y);
+	
+	public char[] getLettersArray();
+	public Color[] getTextColorsArray();
+	public Color[] getBackgroundColorsArray();
+	int getCellIndex(int column, int row);
 
 }
