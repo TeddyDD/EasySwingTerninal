@@ -2,14 +2,18 @@ package com.github.teddydd.EasySwingTerminal;
 
 public class ConsoleCursor {
 
-	public int currentRow, currentColumn;
+	public int currentRow = 1;
+	public int currentColumn = 1;
 	private int rows, columns;
 
 	public ConsoleCursor(HigLevelConsole console) {
-		this.currentColumn = 1;
-		this.currentRow = 1;
 		this.rows = console.getRows();
 		this.columns = console.getColumns();
+	}
+	
+	public ConsoleCursor(int columns, int rows) {
+		this.rows = rows;
+		this.columns = columns;
 	}
 
 	public void setPostion(int column, int row) {
