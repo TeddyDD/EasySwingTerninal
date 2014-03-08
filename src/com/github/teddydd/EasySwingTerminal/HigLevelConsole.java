@@ -29,8 +29,8 @@ public class HigLevelConsole extends Console{
 	
 	public void nextCursorPostion() {
 		if (cursor.currentColumn == columns) {
-			cursor.setRow(cursor.currentRow++);
-			cursor.setColumn(1);
+			cursor.currentRow = cursor.currentRow+1;
+			cursor.currentColumn = 1;
 		}
 		else {
 			cursor.currentColumn++;
@@ -64,6 +64,18 @@ public class HigLevelConsole extends Console{
 	public void setColors(Color text, Color background) {
 		this.currentTextColor = text;
 		this.currentBackgroundColor = background;
+	}
+	
+	public void writeString(int column, int row, String s) {
+		char[] c = s.toCharArray();
+		setPostion(column, row);
+		for (int i = 0; i < c.length; i++){
+			writeChar(c[i]);
+		}
+	}
+	
+	public void writeString(String s) {
+		writeString(cursor.currentColumn, cursor.currentRow, s);
 	}
 	
 	

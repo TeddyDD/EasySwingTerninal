@@ -21,7 +21,7 @@ public class AdvanceConsoleTest extends JFrame{
 		
 		font = DefaultConsoleSettings.font;
 		
-		console = new HigLevelConsole(10, 5, font, Color.black, Color.blue,null,null);
+		console = new HigLevelConsole(55, 19, font, Color.black, Color.blue,null,null);
 		
 		getContentPane().add(console);
 
@@ -38,6 +38,11 @@ public class AdvanceConsoleTest extends JFrame{
 		test.console.writeChar('3');
 		test.console.setColors(Color.red, Color.black);
 		test.console.writeChar('!');
+		test.console.writeString(2, 3, "Hello Wordl!");
+		test.console.setColors(Color.green, Color.DARK_GRAY);
+		test.console.nextCursorPostion();
+		test.console.writeString("W00T It's really Works!!!");
+		
 //		test.console.writeChar('e');
 		
 		
