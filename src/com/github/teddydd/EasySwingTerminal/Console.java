@@ -19,7 +19,7 @@ public class Console extends JComponent{
 
 	/** Size in pixels */
 	private Dimension size;
-	private int columns,rows;
+	protected int columns,rows;
 	/** Size of one letter with background in pixels */
 	private Dimension cellSize;
 	
